@@ -18,8 +18,7 @@ extension StocksListViewController {
 class StocksListViewController: UIViewController {
     private let spinnerView: UIActivityIndicatorView = UIActivityIndicatorView(style: .large)
     private lazy var errorView: ErrorView = ErrorView(getStocksAction: self.getStocks)
-    private lazy var emptyStocksView: EmptyStocksPortfolio = EmptyStocksPortfolio()
-    private lazy var stocksContentView: UIStackView = UIStackView()
+//    private lazy var emptyStocksView: EmptyStocksPortfolio = EmptyStocksPortfolio()
     private lazy var stocksListView: UITableView = UITableView()
     private var stocks: [Stock] = []
     
@@ -36,9 +35,9 @@ class StocksListViewController: UIViewController {
             case .loaded(let stocks):
                 self.stocks = stocks
                 
-                if stocks.isEmpty {
-                    self.setupEmptyStocksView()
-                }
+//                if stocks.isEmpty {
+//                    self.setupEmptyStocksView()
+//                }
                 
                 // Remove the errorView from the super view,
                 // so we do not have it set up multiple times.
@@ -53,15 +52,6 @@ class StocksListViewController: UIViewController {
         super.viewDidLoad()
 
         self.setupSpinnerView()
-        
-        self.stocksContentView.axis = .vertical
-        self.stocksContentView.alignment = .top
-        self.stocksContentView.distribution = .fill
-        self.stocksContentView.layer.borderWidth = 4
-        self.stocksContentView.layer.borderColor = .init(red: 200/255, green: 200/255, blue: 12/255, alpha: 1)
-        self.view.addSubview(self.stocksContentView)
-        self.setupStocksContentView()
-        
         self.setupStocksListView()
         self.getStocks()
         
@@ -113,7 +103,6 @@ extension StocksListViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension StocksListViewController {
     private func setupSpinnerView() {
-        self.spinnerView.tag = 3
         self.view.addSubview(self.spinnerView)
         
         self.spinnerView.translatesAutoresizingMaskIntoConstraints = false
@@ -124,19 +113,7 @@ extension StocksListViewController {
         NSLayoutConstraint.activate(contraints)
     }
   
-    private func setupStocksContentView() {
-        self.stocksContentView.translatesAutoresizingMaskIntoConstraints = false
-        let constraints = [
-            stocksContentView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            stocksContentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            stocksContentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            stocksContentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
-        ]
-        NSLayoutConstraint.activate(constraints)
-    }
-    
     private func setupErrorView() {
-        self.errorView.tag = 1
         self.view.addSubview(self.errorView)
         
         self.errorView.translatesAutoresizingMaskIntoConstraints = false
@@ -159,27 +136,26 @@ extension StocksListViewController {
         self.stocksListView.delegate = self
         self.stocksListView.dataSource = self
         self.stocksListView.register(StockItemCellView.self, forCellReuseIdentifier: "stockItemId")
-        self.stocksListView.tag = 2
         
-        self.stocksListView.layer.borderWidth = 4
-        self.stocksListView.layer.borderColor = .init(red: 200/255, green: 2/255, blue: 120/255, alpha: 1)
-        
-        self.stocksContentView.addArrangedSubview(self.stocksListView)
-        self.stocksContentView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.stocksListView)
+        self.stocksListView.translatesAutoresizingMaskIntoConstraints = false
+        let constraints = [
+            self.stocksListView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.stocksListView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.stocksListView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.stocksListView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        ]
+        NSLayoutConstraint.activate(constraints)
     }
     
-    private func setupEmptyStocksView() {
-        self.emptyStocksView.layer.borderWidth = 4
-        self.emptyStocksView.layer.borderColor = .init(red: 200/255, green: 2/255, blue: 12/255, alpha: 1)
-        self.stocksContentView.addArrangedSubview(self.emptyStocksView)
-        
-        self.stocksContentView.translatesAutoresizingMaskIntoConstraints = false
-        let contraints = [
-            self.stocksContentView.heightAnchor.constraint(equalToConstant: 50),
-            self.stocksContentView.widthAnchor.constraint(equalToConstant: 200)
-//            self.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//            self.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-        ]
-        NSLayoutConstraint.activate(contraints)
-    }
+//    private func setupEmptyStocksView() {
+//        self.emptyStocksView.layer.borderWidth = 4
+//        self.emptyStocksView.layer.borderColor = .init(red: 200/255, green: 2/255, blue: 12/255, alpha: 1)
+//        self.stocksContentView.addArrangedSubview(self.emptyStocksView)
+//
+//        self.stocksContentView.translatesAutoresizingMaskIntoConstraints = false
+//        let contraints = [
+//        ]
+//        NSLayoutConstraint.activate(contraints)
+//    }
 }

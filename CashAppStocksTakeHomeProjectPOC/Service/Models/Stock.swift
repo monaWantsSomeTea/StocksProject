@@ -40,15 +40,16 @@ public struct Stock: Decodable, Equatable {
         self.currency = try container.decode(String.self, forKey: .currency)
         
         let currentPriceCents = try container.decode(Int.self, forKey: .currentPriceCents)
+        let currentPrice = Double(currentPriceCents)/100
         let numberFormater = NumberFormatter()
         numberFormater.numberStyle = .currency
         
-        guard let currentPrice = numberFormater.string(for: NSNumber(value: currentPriceCents))
+        guard let currentPriceFormatted = numberFormater.string(for: NSNumber(value: currentPrice))
         else {
             throw StockDecodingError.unableToConvertCentsToCurrency
         }
         
-        self.currentPrice = currentPrice
+        self.currentPrice = currentPriceFormatted
         
         self.quantity = try? container.decode(Int.self, forKey: .quantity)
         self.currentPriceTimestamp = try container.decode(Int.self, forKey: .currentPriceTimestamp)
