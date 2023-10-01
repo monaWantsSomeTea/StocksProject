@@ -19,25 +19,26 @@ struct StocksService: StocksProvider {
     }
     
     static func fetchStocks() async throws -> [Stock] {
-        guard let url = URL(string: "https://storage.googleapis.com/cash-homework/cash-stocks-api/portfolio.json")
+        guard let url = URL(string: "https://mock-data-stocks.s3.us-west-1.amazonaws.com/portfolio.json")
         else {
             throw StocksServiceError.invalidURL
         }
         
-        guard let urlForMalformedData = URL(string: "https://storage.googleapis.com/cash-homework/cash-stocks-api/portfolio_malformed.json")
-        else {
-            throw StocksServiceError.invalidURL
-        }
-        
-        guard let urlForEmptyList = URL(string: "https://storage.googleapis.com/cash-homework/cash-stocks-api/portfolio_empty.json")
-        else {
-            throw StocksServiceError.invalidURL
-        }
+        // TODO: Remove - Used to test states
+//        guard let urlForMalformedData = URL(string: "https://mock-data-stocks.s3.us-west-1.amazonaws.com/malformedJSONPortfolio.json")
+//        else {
+//            throw StocksServiceError.invalidURL
+//        }
+//
+//        guard let urlForEmptyList = URL(string: "https://mock-data-stocks.s3.us-west-1.amazonaws.com/portfolioEmptyStocks.json")
+//        else {
+//            throw StocksServiceError.invalidURL
+//        }
         
         
         
         let session = URLSession(configuration: .ephemeral)
-        let (data, response) = try await session.data(from: urlForEmptyList)
+        let (data, response) = try await session.data(from: url)
         
         guard let httpResponse = response as? HTTPURLResponse,
               (200..<300).contains(httpResponse.statusCode)
