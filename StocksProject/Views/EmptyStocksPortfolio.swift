@@ -1,6 +1,6 @@
 //
 //  EmptyStocksPortfolio.swift
-//  CashAppStocksTakeHomeProjectPOC
+//  StocksProject
 //
 //  Created by Mona Zheng on 9/29/23.
 //

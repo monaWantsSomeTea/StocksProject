@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  CashAppStocksTakeHomeProjectPOC
+//  StocksProject
 //
 //  Created by Mona Zheng on 9/27/23.
 //

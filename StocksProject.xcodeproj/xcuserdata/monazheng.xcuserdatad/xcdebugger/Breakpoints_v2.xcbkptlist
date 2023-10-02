@@ -14,8 +14,8 @@
             filePath = "CashAppStocksTakeHomeProjectPOC/StocksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "getStocks(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "CashAppStocksTakeHomeProjectPOC/StocksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "getStocks(completion:)"
             landmarkType = "7">
             <Locations>
@@ -112,6 +112,38 @@
             endingLineNumber = "24"
             landmarkName = "fetchStocks()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD184D08-0834-430E-96A9-3214B29FE7C5 - b7380decb8ea742e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static CashAppStocksTakeHomeProjectPOC.StocksService.fetchStocks() async throws -&gt; Swift.Array&lt;CashAppStocksTakeHomeProjectPOC.Stock&gt;"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/StocksService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "924">
+               </Location>
+               <Location
+                  uuid = "CD184D08-0834-430E-96A9-3214B29FE7C5 - b7380decb8ea742e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static CashAppStocksTakeHomeProjectPOC.StocksService.fetchStocks() async throws -&gt; Swift.Array&lt;CashAppStocksTakeHomeProjectPOC.Stock&gt;"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/StocksService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -124,10 +156,42 @@
             filePath = "CashAppStocksTakeHomeProjectPOC/Service/StocksService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "fetchStocks()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F17D786F-B63E-401C-93F0-6DE3220D9AA7 - ff76b57b4e334d7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static CashAppStocksTakeHomeProjectPOC.StocksService.fetchStocks() async throws -&gt; Swift.Array&lt;CashAppStocksTakeHomeProjectPOC.Stock&gt;"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/StocksService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1136">
+               </Location>
+               <Location
+                  uuid = "F17D786F-B63E-401C-93F0-6DE3220D9AA7 - ff76b57b4e334d7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static CashAppStocksTakeHomeProjectPOC.StocksService.fetchStocks() async throws -&gt; Swift.Array&lt;CashAppStocksTakeHomeProjectPOC.Stock&gt;"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/StocksService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1012">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -140,8 +204,8 @@
             filePath = "CashAppStocksTakeHomeProjectPOC/Service/StocksService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "fetchStocks()"
             landmarkType = "7">
             <Locations>
@@ -218,17 +282,49 @@
             filePath = "CashAppStocksTakeHomeProjectPOC/Service/StocksService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "fetchStocks()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CB6AA064-E511-4F3E-B6C1-CAF61CD9721B - ff76b57b4e334c44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static CashAppStocksTakeHomeProjectPOC.StocksService.fetchStocks() async throws -&gt; Swift.Array&lt;CashAppStocksTakeHomeProjectPOC.Stock&gt;"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/StocksService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1404">
+               </Location>
+               <Location
+                  uuid = "CB6AA064-E511-4F3E-B6C1-CAF61CD9721B - ff76b57b4e334c44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static CashAppStocksTakeHomeProjectPOC.StocksService.fetchStocks() async throws -&gt; Swift.Array&lt;CashAppStocksTakeHomeProjectPOC.Stock&gt;"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/StocksService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1228">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "39B81D68-C7BB-4B55-9E06-0E5A58FA22C4"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
@@ -269,6 +365,21 @@
                   endingLineNumber = "32"
                   offsetFromSymbolStart = "192">
                </Location>
+               <Location
+                  uuid = "39B81D68-C7BB-4B55-9E06-0E5A58FA22C4 - 1a12481a228d36cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CashAppStocksTakeHomeProjectPOC.Stock.init(from: Swift.Decoder) throws -&gt; CashAppStocksTakeHomeProjectPOC.Stock"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "204">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -276,7 +387,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3FAC51D1-2C0A-4921-AA00-8D838115C115"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
@@ -332,6 +443,21 @@
                   endingLineNumber = "34"
                   offsetFromSymbolStart = "292">
                </Location>
+               <Location
+                  uuid = "3FAC51D1-2C0A-4921-AA00-8D838115C115 - 1a12481a228d360f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CashAppStocksTakeHomeProjectPOC.Stock.init(from: Swift.Decoder) throws -&gt; CashAppStocksTakeHomeProjectPOC.Stock"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "304">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -339,7 +465,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "74881700-1307-4EDD-8B7F-4C514FF9BF39"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
@@ -410,6 +536,21 @@
                   endingLineNumber = "35"
                   offsetFromSymbolStart = "452">
                </Location>
+               <Location
+                  uuid = "74881700-1307-4EDD-8B7F-4C514FF9BF39 - 1a12481a228d3650"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CashAppStocksTakeHomeProjectPOC.Stock.init(from: Swift.Decoder) throws -&gt; CashAppStocksTakeHomeProjectPOC.Stock"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "464">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -417,14 +558,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0C164D6E-8086-4531-B869-A012725CCE18"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "init(from:)"
             landmarkType = "7">
             <Locations>
@@ -488,6 +629,21 @@
                   endingLineNumber = "41"
                   offsetFromSymbolStart = "956">
                </Location>
+               <Location
+                  uuid = "0C164D6E-8086-4531-B869-A012725CCE18 - 1a12481a228d341e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CashAppStocksTakeHomeProjectPOC.Stock.init(from: Swift.Decoder) throws -&gt; CashAppStocksTakeHomeProjectPOC.Stock"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1484">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -495,7 +651,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "160AFD25-836E-45EF-9940-DD47FD2261C8"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
@@ -566,6 +722,21 @@
                   endingLineNumber = "36"
                   offsetFromSymbolStart = "600">
                </Location>
+               <Location
+                  uuid = "160AFD25-836E-45EF-9940-DD47FD2261C8 - 1a12481a228d35b1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CashAppStocksTakeHomeProjectPOC.Stock.init(from: Swift.Decoder) throws -&gt; CashAppStocksTakeHomeProjectPOC.Stock"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "612">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -573,14 +744,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "40EC4014-FEF7-4EB3-A44A-C9BFE5A2828A"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "init(from:)"
             landmarkType = "7">
             <Locations>
@@ -659,6 +830,21 @@
                   endingLineNumber = "42"
                   offsetFromSymbolStart = "1208">
                </Location>
+               <Location
+                  uuid = "40EC4014-FEF7-4EB3-A44A-C9BFE5A2828A - 1a12481a228d347f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CashAppStocksTakeHomeProjectPOC.Stock.init(from: Swift.Decoder) throws -&gt; CashAppStocksTakeHomeProjectPOC.Stock"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "1652">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -666,7 +852,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "659672F9-1C0B-4133-9615-9BC1C003887D"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
@@ -707,6 +893,21 @@
                   endingLineNumber = "38"
                   offsetFromSymbolStart = "748">
                </Location>
+               <Location
+                  uuid = "659672F9-1C0B-4133-9615-9BC1C003887D - 1a12481a228d35f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CashAppStocksTakeHomeProjectPOC.Stock.init(from: Swift.Decoder) throws -&gt; CashAppStocksTakeHomeProjectPOC.Stock"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "760">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -714,14 +915,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9D669025-10BD-4A09-87AA-AF894AAE877E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CashAppStocksTakeHomeProjectPOC/StocksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "getStocks(completion:)"
             landmarkType = "7">
             <Locations>
@@ -800,6 +1001,21 @@
                   endingLineNumber = "57"
                   offsetFromSymbolStart = "80">
                </Location>
+               <Location
+                  uuid = "9D669025-10BD-4A09-87AA-AF894AAE877E - e8001e0912278777"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CashAppStocksTakeHomeProjectPOC.StocksListViewController.getStocks(completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/StocksListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "116">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -807,16 +1023,16 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "782A25A4-1C0A-405C-8674-0A7BDD008CA5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CashAppStocksTakeHomeProjectPOC/StocksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "StocksListViewController"
-            landmarkType = "3">
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "stocksLoadStatus"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -829,10 +1045,10 @@
             filePath = "CashAppStocksTakeHomeProjectPOC/StocksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "StocksListViewController"
-            landmarkType = "3">
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "stocksLoadStatus"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "6CC16BA9-FE24-49D9-A2EE-EE62DB593D1F - 8804e22c6e291ebb"
@@ -864,6 +1080,21 @@
                   endingLineNumber = "39"
                   offsetFromSymbolStart = "576">
                </Location>
+               <Location
+                  uuid = "6CC16BA9-FE24-49D9-A2EE-EE62DB593D1F - 8804e22c6e2911a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CashAppStocksTakeHomeProjectPOC.StocksListViewController.stocksLoadStatus.didset : CashAppStocksTakeHomeProjectPOC.StocksListViewController.StocksLoadStatus"
+                  moduleName = "CashAppStocksTakeHomeProjectPOC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/monazheng/Desktop/Projects/CashAppStocksTakeHomeProjectPOC/CashAppStocksTakeHomeProjectPOC/StocksListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "576">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -871,16 +1102,48 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "54EA36F7-61C8-4534-9AC7-D3C0875651E0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CashAppStocksTakeHomeProjectPOC/StocksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "StocksListViewController"
-            landmarkType = "3">
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "stocksLoadStatus"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92854998-30FB-4904-8D2D-CD16EF3A7818"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E7AD916-0B27-4264-85AD-F049D4F5F922"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CashAppStocksTakeHomeProjectPOC/Service/Models/Stock.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

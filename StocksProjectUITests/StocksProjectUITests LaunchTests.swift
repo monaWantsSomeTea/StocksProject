@@ -1,13 +1,13 @@
 //
-//  CashAppStocksTakeHomeProjectPOCUITestsLaunchTests.swift
-//  CashAppStocksTakeHomeProjectPOCUITests
+//  StocksProjectUITestsLaunchTests.swift
+//  StocksProjectUITests
 //
 //  Created by Mona Zheng on 9/27/23.
 //
 
 import XCTest
 
-final class CashAppStocksTakeHomeProjectPOCUITestsLaunchTests: XCTestCase {
+final class StocksProjectUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

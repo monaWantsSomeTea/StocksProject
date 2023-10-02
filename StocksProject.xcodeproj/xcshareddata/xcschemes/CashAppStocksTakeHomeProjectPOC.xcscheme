@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "09D38D942AC4EC3B0017FF52"
-               BuildableName = "CashAppStocksTakeHomeProjectPOC.app"
-               BlueprintName = "CashAppStocksTakeHomeProjectPOC"
-               ReferencedContainer = "container:CashAppStocksTakeHomeProjectPOC.xcodeproj">
+               BuildableName = "StocksProject.app"
+               BlueprintName = "StocksProject"
+               ReferencedContainer = "container:StocksProject.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,9 +35,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "09D38DAA2AC4EC3C0017FF52"
-               BuildableName = "CashAppStocksTakeHomeProjectPOCTests.xctest"
-               BlueprintName = "CashAppStocksTakeHomeProjectPOCTests"
-               ReferencedContainer = "container:CashAppStocksTakeHomeProjectPOC.xcodeproj">
+               BuildableName = "StocksProjectTests.xctest"
+               BlueprintName = "StocksProjectTests"
+               ReferencedContainer = "container:StocksProject.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -46,9 +46,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "09D38DB42AC4EC3C0017FF52"
-               BuildableName = "CashAppStocksTakeHomeProjectPOCUITests.xctest"
-               BlueprintName = "CashAppStocksTakeHomeProjectPOCUITests"
-               ReferencedContainer = "container:CashAppStocksTakeHomeProjectPOC.xcodeproj">
+               BuildableName = "StocksProjectUITests.xctest"
+               BlueprintName = "StocksProjectUITests"
+               ReferencedContainer = "container:StocksProject.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -68,9 +68,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "09D38D942AC4EC3B0017FF52"
-            BuildableName = "CashAppStocksTakeHomeProjectPOC.app"
-            BlueprintName = "CashAppStocksTakeHomeProjectPOC"
-            ReferencedContainer = "container:CashAppStocksTakeHomeProjectPOC.xcodeproj">
+            BuildableName = "StocksProject.app"
+            BlueprintName = "StocksProject"
+            ReferencedContainer = "container:StocksProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "09D38D942AC4EC3B0017FF52"
-            BuildableName = "CashAppStocksTakeHomeProjectPOC.app"
-            BlueprintName = "CashAppStocksTakeHomeProjectPOC"
-            ReferencedContainer = "container:CashAppStocksTakeHomeProjectPOC.xcodeproj">
+            BuildableName = "StocksProject.app"
+            BlueprintName = "StocksProject"
+            ReferencedContainer = "container:StocksProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
