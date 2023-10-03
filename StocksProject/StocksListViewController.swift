@@ -7,6 +7,8 @@
 
 import UIKit
 
+private let kErrorViewTag: Int = 1
+
 extension StocksListViewController {
     enum StocksLoadStatus: Equatable {
         case loaded(_ stocks: [Stock])
@@ -29,21 +31,27 @@ class StocksListViewController: UIViewController {
                 self.view.bringSubviewToFront(self.spinnerView)
                 self.spinnerView.startAnimating()
             case .error:
-                // Should setup the error view only once, unless it's removed.
-                self.setupErrorView()
                 self.spinnerView.stopAnimating()
+                
+                // Setup the error view only once.
+                if self.view.subviews.contains(where: { $0.tag == kErrorViewTag }) {
+                    break
+                } else {
+                    self.setupErrorView()
+                }
             case .loaded(let stocks):
                 self.stocks = stocks
+                self.spinnerView.stopAnimating()
+                self.removeErrorView()
                 
 //                if stocks.isEmpty {
 //                    self.setupEmptyStocksView()
+//                } else {
+                self.setupStocksListView()
 //                }
                 
-                // Remove the errorView from the super view,
-                // so we do not have it set up multiple times.
-                self.removeErrorView()
-                self.stocksListView.reloadData()
-                self.spinnerView.stopAnimating()
+//                self.stocksListView.reloadData()
+                
             }
         }
     }
@@ -52,7 +60,6 @@ class StocksListViewController: UIViewController {
         super.viewDidLoad()
 
         self.setupSpinnerView()
-        self.setupStocksListView()
         self.getStocks()
         
         self.view.backgroundColor = .white
@@ -114,6 +121,7 @@ extension StocksListViewController {
     }
   
     private func setupErrorView() {
+        self.errorView.tag = kErrorViewTag
         self.view.addSubview(self.errorView)
         
         self.errorView.translatesAutoresizingMaskIntoConstraints = false
@@ -127,7 +135,7 @@ extension StocksListViewController {
     }
     
     private func removeErrorView() {
-        if let errorView = self.errorView.viewWithTag(1) {
+        if let errorView = self.errorView.viewWithTag(kErrorViewTag) {
             errorView.removeFromSuperview()
         }
     }
