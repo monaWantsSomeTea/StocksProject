@@ -20,7 +20,7 @@ extension StocksListViewController {
 class StocksListViewController: UIViewController {
     private let spinnerView: UIActivityIndicatorView = UIActivityIndicatorView(style: .large)
     private lazy var errorView: ErrorView = ErrorView(getStocksAction: self.getStocks)
-//    private lazy var emptyStocksView: EmptyStocksPortfolio = EmptyStocksPortfolio()
+    private lazy var emptyStocksView: EmptyStocksPortfolio = EmptyStocksPortfolio()
     private lazy var stocksListView: UITableView = UITableView()
     private var stocks: [Stock] = []
     
@@ -33,7 +33,7 @@ class StocksListViewController: UIViewController {
             case .error:
                 self.spinnerView.stopAnimating()
                 
-                // Setup the error view only once.
+                // Setup the error view one time.
                 if self.view.subviews.contains(where: { $0.tag == kErrorViewTag }) {
                     break
                 } else {
@@ -42,16 +42,14 @@ class StocksListViewController: UIViewController {
             case .loaded(let stocks):
                 self.stocks = stocks
                 self.spinnerView.stopAnimating()
+                // Remove error view after a successful retry at fetching the stocks
                 self.removeErrorView()
                 
-//                if stocks.isEmpty {
-//                    self.setupEmptyStocksView()
-//                } else {
-                self.setupStocksListView()
-//                }
-                
-//                self.stocksListView.reloadData()
-                
+                if stocks.isEmpty {
+                    self.setupEmptyStocksView()
+                } else {
+                    self.setupStocksListView()
+                }
             }
         }
     }
@@ -156,14 +154,16 @@ extension StocksListViewController {
         NSLayoutConstraint.activate(constraints)
     }
     
-//    private func setupEmptyStocksView() {
-//        self.emptyStocksView.layer.borderWidth = 4
-//        self.emptyStocksView.layer.borderColor = .init(red: 200/255, green: 2/255, blue: 12/255, alpha: 1)
-//        self.stocksContentView.addArrangedSubview(self.emptyStocksView)
-//
-//        self.stocksContentView.translatesAutoresizingMaskIntoConstraints = false
-//        let contraints = [
-//        ]
-//        NSLayoutConstraint.activate(contraints)
-//    }
+    private func setupEmptyStocksView() {
+        self.view.addSubview(self.emptyStocksView)
+
+        self.emptyStocksView.translatesAutoresizingMaskIntoConstraints = false
+        let contraints = [
+            self.emptyStocksView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.emptyStocksView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.emptyStocksView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.emptyStocksView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        ]
+        NSLayoutConstraint.activate(contraints)
+    }
 }
