@@ -1,0 +1,156 @@
+{
+    "stocks": [
+      {
+        "ticker": "SPY",
+        "name": "SPDR S&P 500 ETF",
+        "currency": "USD",
+        "current_price_cents": 42770,
+        "quantity": null,
+        "current_price_timestamp": 1681845832
+      },
+      {
+        "ticker": "GOOG",
+        "name": "Alphabet Class C",
+        "currency": "USD",
+        "current_price_cents": 13178,
+        "quantity": 10,
+        "current_price_timestamp": 1681845832
+      },
+      {
+        "ticker": "AAPL",
+        "name": "Apple",
+        "currency": "USD",
+        "current_price_cents": 17123,
+        "quantity": 20,
+        "current_price_timestamp": 1681845832
+      },
+          {
+        "ticker": "TSLA",
+        "name": "Tesla",
+        "currency": "USD",
+        "current_price_cents": 24992,
+        "quantity": 5,
+        "current_price_timestamp": 1681845832
+      },
+          {
+        "ticker": "ABNB",
+        "name": "Airbnb",
+        "currency": "USD",
+        "current_price_cents": 13445,
+        "quantity": 9,
+        "current_price_timestamp": 1681845832
+      },
+      {
+        "ticker": "AMZN",
+        "name": "Amazon",
+        "currency": "USD",
+        "current_price_cents": 12712,
+        "quantity": 5,
+        "current_price_timestamp": 1681845832
+      },
+                {
+        "ticker": "CCL",
+        "name": "Carnival Corporation & plc",
+        "currency": "USD",
+        "current_price_cents": 1372,
+        "quantity": 2,
+        "current_price_timestamp": 1681845832
+      },
+                {
+        "ticker": "PLTR",
+        "name": "Palantir Technologies",
+        "currency": "USD",
+        "current_price_cents": 1600,
+        "quantity": 2,
+        "current_price_timestamp": 1681845832
+      },
+                {
+        "ticker": "F",
+        "name": "Ford Motor Company",
+        "currency": "USD",
+        "current_price_cents": 1242,
+        "quantity": null,
+        "current_price_timestamp": 1681845832
+      },
+                {
+        "ticker": "NIO",
+        "name": "NIO",
+        "currency": "USD",
+        "current_price_cents": 904,
+        "quantity": 10,
+        "current_price_timestamp": 1681845832
+      },
+                {
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "currency": "USD",
+        "current_price_cents": 43499,
+        "quantity": 1,
+        "current_price_timestamp": 1681845832
+      },
+                {
+        "ticker": "AAL",
+        "name": "American Airlines",
+        "currency": "USD",
+        "current_price_cents": 1281,
+        "quantity": null,
+        "current_price_timestamp": 1681845832
+      },
+                {
+        "ticker": "NCLH",
+        "name": "Norwegian Cruise Line Holdings",
+        "currency": "USD",
+        "current_price_cents": 1648,
+        "quantity": 20,
+        "current_price_timestamp": 1681845832
+      },
+                {
+        "ticker": "META",
+        "name": "Meta Platforms",
+        "currency": "USD",
+        "current_price_cents": 30021,
+        "quantity": 7,
+        "current_price_timestamp": 1681845832
+      },
+      {
+      "ticker": "BAC",
+      "name": "Bank of America Corporation",
+      "currency": "USD",
+      "current_price_cents": 2738,
+      "quantity": 3,
+      "current_price_timestamp": 1681845832
+    },
+       {
+        "ticker": "BTC",
+        "name": "Bitcoin",
+        "currency": "USD",
+        "current_price_cents": 2701859,
+        "quantity": null,
+        "current_price_timestamp": 1681845832
+      },
+       {
+        "ticker": "INTC",
+        "name": "Intel Corporation",
+        "currency": "USD",
+        "current_price_cents": 3555,
+        "quantity": 2,
+        "current_price_timestamp": 1681845832
+      },
+      {
+        "ticker": "PFE",
+        "name": "Pfizer",
+        "currency": "USD",
+        "current_price_cents": 3317,
+        "quantity": null,
+        "current_price_timestamp": 1681845832
+      },
+      {
+        "ticker": "NKE",
+        "name": "NIKE",
+        "currency": "USD",
+        "current_price_cents": 9562,
+        "quantity": 3,
+        "current_price_timestamp": 1681845832
+      }
+    ]
+  }
