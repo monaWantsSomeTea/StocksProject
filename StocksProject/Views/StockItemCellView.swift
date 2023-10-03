@@ -23,7 +23,7 @@ final class StockItemCellView: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCellView() {
+    private func setupCellView() {
         self.cellView.backgroundColor = .systemGreen
         self.cellView.layer.cornerRadius = 10
         self.addSubview(cellView)
@@ -39,7 +39,7 @@ final class StockItemCellView: UITableViewCell {
         NSLayoutConstraint.activate(constraints)
      }
     
-    func setupStockTickerLabel() {
+    private func setupStockTickerLabel() {
         self.ticketLabel.textColor = .white
         self.ticketLabel.font = UIFont.boldSystemFont(ofSize: 16)
         self.cellView.addSubview(ticketLabel)
@@ -54,7 +54,7 @@ final class StockItemCellView: UITableViewCell {
         NSLayoutConstraint.activate(constraints)
     }
     
-    func setupStockPriceLabel() {
+    private func setupStockPriceLabel() {
         self.priceLabel.textColor = .white
         self.priceLabel.textAlignment = .right
         self.priceLabel.font = UIFont.boldSystemFont(ofSize: 16)

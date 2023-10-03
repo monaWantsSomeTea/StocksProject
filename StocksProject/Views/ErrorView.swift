@@ -13,8 +13,7 @@ final class ErrorView: UIView {
     private let errorLabel: UILabel = UILabel()
     private let retryButton: UIButton = UIButton()
     private let spacer: UIView = UIView()
-    
-    let getStocksAction: ((() -> Void)?) -> Void
+    private let getStocksAction: ((() -> Void)?) -> Void
     
     init(getStocksAction: @escaping ((() -> Void)?) -> Void) {
         self.getStocksAction = getStocksAction
@@ -40,7 +39,7 @@ final class ErrorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupErrorLabel() {
+    private func setupErrorLabel() {
         self.errorLabel.text = "Something went wrong"
         self.errorLabel.font = .systemFont(ofSize: 16, weight: .medium)
         self.errorLabel.textColor = .gray
@@ -55,7 +54,7 @@ final class ErrorView: UIView {
         NSLayoutConstraint.activate(contraints)
     }
     
-    func setupRetryButton() {
+    private func setupRetryButton() {
         self.retryButton.setTitle("Retry", for: .normal)
         self.retryButton.backgroundColor = .lightGray
         self.retryButton.layer.cornerRadius = 15
@@ -78,7 +77,7 @@ final class ErrorView: UIView {
         }
     }
     
-    func setupSpacer() {
+    private func setupSpacer() {
         self.stackView.addArrangedSubview(self.spacer)
         
         self.spacer.translatesAutoresizingMaskIntoConstraints = false

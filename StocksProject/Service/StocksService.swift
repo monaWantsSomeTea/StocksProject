@@ -12,7 +12,7 @@ protocol StocksProvider {
 }
 
 struct StocksService: StocksProvider {
-    enum StocksServiceError: Error, Equatable {
+    private enum StocksServiceError: Error, Equatable {
         case invalidURL
         case invalidResponse
         case failedToDecode

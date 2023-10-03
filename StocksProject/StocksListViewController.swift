@@ -10,7 +10,7 @@ import UIKit
 private let kErrorViewTag: Int = 1
 
 extension StocksListViewController {
-    enum StocksLoadStatus: Equatable {
+    private enum StocksLoadStatus: Equatable {
         case loaded(_ stocks: [Stock])
         case loading
         case error
@@ -24,7 +24,7 @@ class StocksListViewController: UIViewController {
     private lazy var stocksListView: UITableView = UITableView()
     private var stocks: [Stock] = []
     
-    @MainActor var stocksLoadStatus: StocksLoadStatus = .loading {
+    @MainActor private var stocksLoadStatus: StocksLoadStatus = .loading {
         @MainActor didSet {
             switch self.stocksLoadStatus {
             case .loading:
@@ -63,7 +63,7 @@ class StocksListViewController: UIViewController {
         self.view.backgroundColor = .white
     }
 
-    func getStocks(completion: (() -> Void)? = nil) {
+    private func getStocks(completion: (() -> Void)? = nil) {
         self.stocksLoadStatus = .loading
         
         Task {
@@ -95,7 +95,7 @@ extension StocksListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = self.stocksListView.dequeueReusableCell(withIdentifier: "stockItemId", for: indexPath) as! StockItemCellView
         cell.backgroundColor = .white
         cell.ticketLabel.text = self.stocks[indexPath.row].ticker
-        cell.priceLabel.text = self.stocks[indexPath.row].currentPrice // TODO: add another 0 after the decimel if it's 0
+        cell.priceLabel.text = self.stocks[indexPath.row].currentPrice
         return cell
     }
     
