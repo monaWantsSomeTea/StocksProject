@@ -19,6 +19,17 @@ final class ErrorView: UIView {
         self.getStocksAction = getStocksAction
         super.init(frame: .zero)
         
+        self.setupVStackView()
+        self.setupErrorLabel()
+        self.setupSpacer()
+        self.setupRetryButton()
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupVStackView() {
         self.stackView.axis = .vertical
         self.stackView.alignment = .center
         self.addSubview(self.stackView)
@@ -29,14 +40,6 @@ final class ErrorView: UIView {
             self.stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ]
         NSLayoutConstraint.activate(contraints)
-
-        self.setupErrorLabel()
-        self.setupSpacer()
-        self.setupRetryButton()
-    }
-    
-    required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     private func setupErrorLabel() {

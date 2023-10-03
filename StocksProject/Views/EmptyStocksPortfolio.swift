@@ -12,7 +12,14 @@ final class EmptyStocksPortfolio: UIView {
     
     init() {
         super.init(frame: .zero)
-
+        self.setupEmptyStocksLabel()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupEmptyStocksLabel() {
         self.emptyStocksLabel.text = "Currently, no stocks are in your portfolio."
         self.emptyStocksLabel.font = .systemFont(ofSize: 16, weight: .medium)
         self.emptyStocksLabel.textColor = .gray
@@ -27,9 +34,5 @@ final class EmptyStocksPortfolio: UIView {
             self.emptyStocksLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ]
         NSLayoutConstraint.activate(contraints)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

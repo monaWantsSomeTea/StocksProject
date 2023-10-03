@@ -20,6 +20,7 @@
 		09D38DD12AC4FD100017FF52 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D38DD02AC4FD100017FF52 /* ErrorView.swift */; };
 		09D38DD52AC647070017FF52 /* StockItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D38DD42AC647070017FF52 /* StockItemCellView.swift */; };
 		09ED78D92AC76F69007BE7FB /* EmptyStocksPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED78D82AC76F69007BE7FB /* EmptyStocksPortfolio.swift */; };
+		09ED78DB2ACCDBDD007BE7FB /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED78DA2ACCDBDD007BE7FB /* PaddedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		09D38DD02AC4FD100017FF52 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		09D38DD42AC647070017FF52 /* StockItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemCellView.swift; sourceTree = "<group>"; };
 		09ED78D82AC76F69007BE7FB /* EmptyStocksPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStocksPortfolio.swift; sourceTree = "<group>"; };
+		09ED78DA2ACCDBDD007BE7FB /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				09D38DD02AC4FD100017FF52 /* ErrorView.swift */,
 				09D38DD42AC647070017FF52 /* StockItemCellView.swift */,
 				09ED78D82AC76F69007BE7FB /* EmptyStocksPortfolio.swift */,
+				09ED78DA2ACCDBDD007BE7FB /* PaddedLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				09D38DD12AC4FD100017FF52 /* ErrorView.swift in Sources */,
 				09D38D992AC4EC3B0017FF52 /* AppDelegate.swift in Sources */,
 				09D38DCF2AC4F0B40017FF52 /* StocksService.swift in Sources */,
+				09ED78DB2ACCDBDD007BE7FB /* PaddedLabel.swift in Sources */,
 				09D38DCD2AC4EDE30017FF52 /* Stock.swift in Sources */,
 				09D38D9B2AC4EC3B0017FF52 /* SceneDelegate.swift in Sources */,
 			);
