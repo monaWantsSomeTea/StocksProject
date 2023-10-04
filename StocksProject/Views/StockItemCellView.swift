@@ -30,13 +30,12 @@ final class StockItemCellView: UITableViewCell {
         self.cellView.isLayoutMarginsRelativeArrangement = true
         self.cellView.directionalLayoutMargins = .init(top: 8, leading: 16, bottom: 8, trailing: 16)
         self.addSubview(cellView)
-        self.selectionStyle = .default
         
         self.cellView.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            cellView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
-            cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
+            self.cellView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            self.cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
+            self.cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
         ]
         NSLayoutConstraint.activate(constraints)
      }
@@ -48,8 +47,8 @@ final class StockItemCellView: UITableViewCell {
         
         self.tickerLabel.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            tickerLabel.heightAnchor.constraint(equalToConstant: 50),
-            tickerLabel.widthAnchor.constraint(equalToConstant: 100)
+            self.tickerLabel.heightAnchor.constraint(equalToConstant: 50),
+            self.tickerLabel.widthAnchor.constraint(equalToConstant: 100)
         ]
         NSLayoutConstraint.activate(constraints)
     }
@@ -65,8 +64,8 @@ final class StockItemCellView: UITableViewCell {
         
         self.priceLabel.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            priceLabel.heightAnchor.constraint(equalToConstant: 30),
-            priceLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 92)
+            self.priceLabel.heightAnchor.constraint(equalToConstant: 30),
+            self.priceLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 92)
         ]
         
         NSLayoutConstraint.activate(constraints)

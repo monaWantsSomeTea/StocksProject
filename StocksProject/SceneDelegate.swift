@@ -23,9 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
-        
-        // The initial view controller to the navigation view controller as the root view controller.
-        // The navigation view controller as the window root view controller.
+
         let navigationViewController = UINavigationController(rootViewController: StocksListViewController())
         window?.rootViewController = navigationViewController
     }
