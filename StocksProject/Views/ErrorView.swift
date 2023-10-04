@@ -9,27 +9,31 @@
 import UIKit
 
 final class ErrorView: UIView {
+    typealias CompletionHandler = (() -> Void)?
+    
     private let stackView: UIStackView = UIStackView()
     private let errorLabel: UILabel = UILabel()
     private let retryButton: UIButton = UIButton()
     private let spacer: UIView = UIView()
-    private let getStocksAction: ((() -> Void)?) -> Void
-    
-    init(getStocksAction: @escaping ((() -> Void)?) -> Void) {
-        self.getStocksAction = getStocksAction
+
+    weak var parentViewController: StocksListViewController?
+
+    init(parent: StocksListViewController? = nil) {
+        self.parentViewController = parent
         super.init(frame: .zero)
         
-        self.setupVStackView()
-        self.setupErrorLabel()
-        self.setupSpacer()
-        self.setupRetryButton()
+        self.setupVStackView {
+            self.setupErrorLabel()
+            self.setupSpacer()
+            self.setupRetryButton()
+        }
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupVStackView() {
+    private func setupVStackView(completion: () -> Void) {
         self.stackView.axis = .vertical
         self.stackView.alignment = .center
         self.addSubview(self.stackView)
@@ -40,6 +44,7 @@ final class ErrorView: UIView {
             self.stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ]
         NSLayoutConstraint.activate(contraints)
+        completion()
     }
     
     private func setupErrorLabel() {
@@ -74,10 +79,13 @@ final class ErrorView: UIView {
     
     @objc func pressedRetryButton() {
         self.retryButton.isEnabled = false
-        self.getStocksAction { [weak self] in
+        
+        let completionHandler: CompletionHandler = { [weak self] in
             // We want to enable the button only when the get stocks method is completed
             self?.retryButton.isEnabled = true
         }
+        
+        self.parentViewController?.getStocks(completion: completionHandler)
     }
     
     private func setupSpacer() {

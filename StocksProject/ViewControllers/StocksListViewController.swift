@@ -19,10 +19,11 @@ extension StocksListViewController {
 
 class StocksListViewController: UIViewController {
     private let spinnerView: UIActivityIndicatorView = UIActivityIndicatorView(style: .large)
-    private lazy var errorView: ErrorView = ErrorView(getStocksAction: self.getStocks)
     private lazy var emptyStocksView: EmptyStocksPortfolio = EmptyStocksPortfolio()
     private lazy var stocksListView: UITableView = UITableView()
     private var stocks: [Stock] = []
+    
+    var errorView: ErrorView?
     
     @MainActor private var stocksLoadStatus: StocksLoadStatus = .loading {
         @MainActor didSet {
@@ -33,12 +34,15 @@ class StocksListViewController: UIViewController {
             case .error:
                 self.spinnerView.stopAnimating()
                 
+                if self.errorView == nil {
+                    self.errorView = ErrorView(parent: self)
+                }
+                
                 // Setup the error view one time.
-                if self.view.subviews.contains(where: { $0.tag == kErrorViewTag }) {
-                    break
-                } else {
+                if !self.view.subviews.contains(where: { $0.tag == kErrorViewTag }) {
                     self.setupErrorView()
                 }
+                
             case .loaded(let stocks):
                 self.stocks = stocks
                 self.spinnerView.stopAnimating()
@@ -65,7 +69,7 @@ class StocksListViewController: UIViewController {
         self.navigationController?.navigationBar.scrollEdgeAppearance = UINavigationBarAppearance(barAppearance: .init())
     }
 
-    private func getStocks(completion: (() -> Void)? = nil) {
+    func getStocks(completion: (() -> Void)? = nil) {
         self.stocksLoadStatus = .loading
         
         Task {
@@ -121,21 +125,23 @@ extension StocksListViewController {
     }
   
     private func setupErrorView() {
-        self.errorView.tag = kErrorViewTag
-        self.view.addSubview(self.errorView)
+        guard let errorView = self.errorView else { return }
         
-        self.errorView.translatesAutoresizingMaskIntoConstraints = false
+        errorView.tag = kErrorViewTag
+        self.view.addSubview(errorView)
+        
+        errorView.translatesAutoresizingMaskIntoConstraints = false
         let contraints = [
-            self.errorView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            self.errorView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            self.errorView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.errorView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            errorView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            errorView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            errorView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            errorView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         ]
         NSLayoutConstraint.activate(contraints)
     }
     
     private func removeErrorView() {
-        if let errorView = self.errorView.viewWithTag(kErrorViewTag) {
+        if let errorView = self.errorView?.viewWithTag(kErrorViewTag) {
             errorView.removeFromSuperview()
         }
     }
