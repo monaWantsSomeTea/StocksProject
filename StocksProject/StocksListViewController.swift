@@ -61,6 +61,8 @@ class StocksListViewController: UIViewController {
         self.getStocks()
         
         self.view.backgroundColor = .white
+        self.navigationItem.title = "Portfolio"
+        self.navigationController?.navigationBar.scrollEdgeAppearance = UINavigationBarAppearance(barAppearance: .init())
     }
 
     private func getStocks(completion: (() -> Void)? = nil) {
