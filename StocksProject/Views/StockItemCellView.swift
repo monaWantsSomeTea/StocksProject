@@ -9,7 +9,7 @@ import UIKit
 
 final class StockItemCellView: UITableViewCell {
     private let cellView: UIStackView = UIStackView()
-    let ticketLabel: UILabel = UILabel()
+    let tickerLabel: UILabel = UILabel()
     let priceLabel: PaddingLabel = PaddingLabel(withInsets: 0, 0, 12, 12)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -30,7 +30,7 @@ final class StockItemCellView: UITableViewCell {
         self.cellView.isLayoutMarginsRelativeArrangement = true
         self.cellView.directionalLayoutMargins = .init(top: 8, leading: 16, bottom: 8, trailing: 16)
         self.addSubview(cellView)
-        self.selectionStyle = .none
+        self.selectionStyle = .default
         
         self.cellView.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
@@ -42,14 +42,14 @@ final class StockItemCellView: UITableViewCell {
      }
     
     private func setupStockTickerLabel() {
-        self.ticketLabel.textColor = .black
-        self.ticketLabel.font = UIFont.systemFont(ofSize: 16)
-        self.cellView.addArrangedSubview(ticketLabel)
+        self.tickerLabel.textColor = .black
+        self.tickerLabel.font = UIFont.systemFont(ofSize: 16)
+        self.cellView.addArrangedSubview(tickerLabel)
         
-        self.ticketLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.tickerLabel.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            ticketLabel.heightAnchor.constraint(equalToConstant: 50),
-            ticketLabel.widthAnchor.constraint(equalToConstant: 100)
+            tickerLabel.heightAnchor.constraint(equalToConstant: 50),
+            tickerLabel.widthAnchor.constraint(equalToConstant: 100)
         ]
         NSLayoutConstraint.activate(constraints)
     }

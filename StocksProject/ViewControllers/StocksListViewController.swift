@@ -96,7 +96,7 @@ extension StocksListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.stocksListView.dequeueReusableCell(withIdentifier: "stockItemId", for: indexPath) as! StockItemCellView
         cell.backgroundColor = .white
-        cell.ticketLabel.text = self.stocks[indexPath.row].ticker
+        cell.tickerLabel.text = self.stocks[indexPath.row].ticker
         cell.priceLabel.text = self.stocks[indexPath.row].currentPrice
         return cell
     }
