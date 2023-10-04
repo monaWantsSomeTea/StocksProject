@@ -21,6 +21,7 @@
 		09D38DD52AC647070017FF52 /* StockItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D38DD42AC647070017FF52 /* StockItemCellView.swift */; };
 		09ED78D92AC76F69007BE7FB /* EmptyStocksPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED78D82AC76F69007BE7FB /* EmptyStocksPortfolio.swift */; };
 		09ED78DB2ACCDBDD007BE7FB /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED78DA2ACCDBDD007BE7FB /* PaddedLabel.swift */; };
+		09ED78DE2ACCF05C007BE7FB /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED78DD2ACCF05C007BE7FB /* StockDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		09D38DD42AC647070017FF52 /* StockItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemCellView.swift; sourceTree = "<group>"; };
 		09ED78D82AC76F69007BE7FB /* EmptyStocksPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStocksPortfolio.swift; sourceTree = "<group>"; };
 		09ED78DA2ACCDBDD007BE7FB /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
+		09ED78DD2ACCF05C007BE7FB /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				09D38D9C2AC4EC3B0017FF52 /* StocksListViewController.swift */,
+				09ED78DD2ACCF05C007BE7FB /* StockDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09ED78DE2ACCF05C007BE7FB /* StockDetailViewController.swift in Sources */,
 				09D38D9D2AC4EC3B0017FF52 /* StocksListViewController.swift in Sources */,
 				09ED78D92AC76F69007BE7FB /* EmptyStocksPortfolio.swift in Sources */,
 				09D38DD52AC647070017FF52 /* StockItemCellView.swift in Sources */,
