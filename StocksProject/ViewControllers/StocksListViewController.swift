@@ -10,7 +10,7 @@ import UIKit
 private let kErrorViewTag: Int = 1
 
 extension StocksListViewController {
-    private enum StocksLoadStatus: Equatable {
+    enum StocksLoadStatus: Equatable {
         case loaded(_ stocks: [Stock])
         case loading
         case error
@@ -25,7 +25,7 @@ class StocksListViewController: UIViewController {
     
     var errorView: ErrorView?
     
-    @MainActor private var stocksLoadStatus: StocksLoadStatus = .loading {
+    @MainActor var stocksLoadStatus: StocksLoadStatus = .loading {
         @MainActor didSet {
             switch self.stocksLoadStatus {
             case .loading:
@@ -60,7 +60,7 @@ class StocksListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.setupSpinnerView()
         self.getStocks()
         
@@ -72,21 +72,20 @@ class StocksListViewController: UIViewController {
     func getStocks(completion: (() -> Void)? = nil) {
         self.stocksLoadStatus = .loading
         
-        Task {
+        // Weak `self` to allow the view controller to disallocate.
+        Task { [weak self] in
             do {
                 let stocks = try await StocksService.fetchStocks()
-                self.stocksLoadStatus = .loaded(stocks)
+                self?.stocksLoadStatus = .loaded(stocks)
             } catch {
                 print("Error:", error.localizedDescription)
-                self.stocksLoadStatus = .error
+                self?.stocksLoadStatus = .error
             }
-            
+
             if let completion {
                 completion()
             }
         }
-        
-    
     }
 }
 

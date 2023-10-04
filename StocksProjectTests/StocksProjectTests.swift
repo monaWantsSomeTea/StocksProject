@@ -35,22 +35,31 @@ final class StocksProjectTests: XCTestCase {
     
     func testMemoryLeak_forStocksListViewController() {
         let sut = StocksListViewController()
-        // ErrorView initializes with self for `StocksListViewController`
-        let _ = sut.errorView
+        sut.viewDidLoad()
         
         addTeardownBlock { [weak sut] in
             XCTAssertNil(sut, "Potential memory leak, this object should have been deallocated")
         }
     }
     
-    func testMemoryLeak_forErrorView() {
-        let sut: StocksListViewController? = StocksListViewController()
-        let view = sut?.errorView
+    @MainActor func testMemoryLeak_forErrorView() {
+        let sut: StocksListViewController = StocksListViewController()
+        sut.stocksLoadStatus = .error
+        
+        guard let view = sut.errorView else {
+            XCTFail("No view was assigned")
+            return
+        }
+        
         // Pressed retry button calls the method from StocksListViewController
-        view?.pressedRetryButton()
+        view.pressedRetryButton()
         
         addTeardownBlock { [weak view] in
             XCTAssertNil(view, "Potential memory leak, this object should have been deallocated")
+        }
+        
+        addTeardownBlock { [weak sut] in
+            XCTAssertNil(sut, "Potential memory leak, this object should have been deallocated")
         }
     }
 }
