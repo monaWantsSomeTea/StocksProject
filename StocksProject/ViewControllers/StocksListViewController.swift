@@ -23,7 +23,7 @@ class StocksListViewController: UIViewController {
     private lazy var stocksListView: UITableView = UITableView()
     private var stocks: [Stock] = []
     
-    var errorView: ErrorView?
+    lazy var errorView: ErrorView = ErrorView(parent: self)
     
     @MainActor var stocksLoadStatus: StocksLoadStatus = .loading {
         @MainActor didSet {
@@ -33,10 +33,6 @@ class StocksListViewController: UIViewController {
                 self.spinnerView.startAnimating()
             case .error:
                 self.spinnerView.stopAnimating()
-                
-                if self.errorView == nil {
-                    self.errorView = ErrorView(parent: self)
-                }
                 
                 // Setup the error view one time.
                 if !self.view.subviews.contains(where: { $0.tag == kErrorViewTag }) {
@@ -124,23 +120,21 @@ extension StocksListViewController {
     }
   
     private func setupErrorView() {
-        guard let errorView = self.errorView else { return }
+        self.errorView.tag = kErrorViewTag
+        self.view.addSubview(self.errorView)
         
-        errorView.tag = kErrorViewTag
-        self.view.addSubview(errorView)
-        
-        errorView.translatesAutoresizingMaskIntoConstraints = false
+        self.errorView.translatesAutoresizingMaskIntoConstraints = false
         let contraints = [
-            errorView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            errorView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            errorView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            errorView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            self.errorView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.errorView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.errorView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.errorView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         ]
         NSLayoutConstraint.activate(contraints)
     }
     
     private func removeErrorView() {
-        if let errorView = self.errorView?.viewWithTag(kErrorViewTag) {
+        if let errorView = self.errorView.viewWithTag(kErrorViewTag) {
             errorView.removeFromSuperview()
         }
     }

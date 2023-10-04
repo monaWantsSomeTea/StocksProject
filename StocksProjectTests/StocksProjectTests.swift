@@ -42,14 +42,9 @@ final class StocksProjectTests: XCTestCase {
         }
     }
     
-    @MainActor func testMemoryLeak_forErrorView() {
+    func testMemoryLeak_forErrorView() {
         let sut: StocksListViewController = StocksListViewController()
-        sut.stocksLoadStatus = .error
-        
-        guard let view = sut.errorView else {
-            XCTFail("No view was assigned")
-            return
-        }
+        let view = sut.errorView
         
         // Pressed retry button calls the method from StocksListViewController
         view.pressedRetryButton()
