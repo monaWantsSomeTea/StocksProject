@@ -109,11 +109,11 @@
 		09D38D972AC4EC3B0017FF52 /* StocksProject */ = {
 			isa = PBXGroup;
 			children = (
+				09ED78DC2ACCF03E007BE7FB /* ViewControllers */,
 				09D38DCB2AC4EDA60017FF52 /* Views */,
 				09D38DC82AC4ED830017FF52 /* Service */,
 				09D38D982AC4EC3B0017FF52 /* AppDelegate.swift */,
 				09D38D9A2AC4EC3B0017FF52 /* SceneDelegate.swift */,
-				09D38D9C2AC4EC3B0017FF52 /* StocksListViewController.swift */,
 				09D38DA12AC4EC3C0017FF52 /* Assets.xcassets */,
 				09D38DA32AC4EC3C0017FF52 /* LaunchScreen.storyboard */,
 				09D38DA62AC4EC3C0017FF52 /* Info.plist */,
@@ -164,6 +164,14 @@
 				09ED78DA2ACCDBDD007BE7FB /* PaddedLabel.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		09ED78DC2ACCF03E007BE7FB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				09D38D9C2AC4EC3B0017FF52 /* StocksListViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
