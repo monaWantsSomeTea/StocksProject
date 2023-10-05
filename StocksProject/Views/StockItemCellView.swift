@@ -8,9 +8,9 @@
 import UIKit
 
 final class StockItemCellView: UITableViewCell {
-    private let cellView: UIView = UIView() // TODO: change to a HStack
-    let ticketLabel: UILabel = UILabel()
-    let priceLabel: UILabel = UILabel()
+    private let cellView: UIStackView = UIStackView()
+    let tickerLabel: UILabel = UILabel()
+    let priceLabel: PaddingLabel = PaddingLabel(withInsets: 0, 0, 12, 12)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -23,50 +23,51 @@ final class StockItemCellView: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCellView() {
-        self.cellView.backgroundColor = .systemGreen
-        self.cellView.layer.cornerRadius = 10
+    private func setupCellView() {
+        self.cellView.axis = .horizontal
+        self.cellView.alignment = .center
+        self.cellView.distribution = .equalCentering
+        self.cellView.isLayoutMarginsRelativeArrangement = true
+        self.cellView.directionalLayoutMargins = .init(top: 8, leading: 16, bottom: 8, trailing: 16)
         self.addSubview(cellView)
-        self.selectionStyle = .none
         
         self.cellView.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
-            cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
-            cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
-            cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.cellView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            self.cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
+            self.cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
         ]
         NSLayoutConstraint.activate(constraints)
      }
     
-    func setupStockTickerLabel() {
-        self.ticketLabel.textColor = .white
-        self.ticketLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        self.cellView.addSubview(ticketLabel)
+    private func setupStockTickerLabel() {
+        self.tickerLabel.textColor = .black
+        self.tickerLabel.font = UIFont.systemFont(ofSize: 16)
+        self.cellView.addArrangedSubview(tickerLabel)
         
-        self.ticketLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.tickerLabel.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            ticketLabel.heightAnchor.constraint(equalToConstant: 50),
-            ticketLabel.widthAnchor.constraint(equalToConstant: 100),
-            ticketLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
-            ticketLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20)
+            self.tickerLabel.heightAnchor.constraint(equalToConstant: 50),
+            self.tickerLabel.widthAnchor.constraint(equalToConstant: 100)
         ]
         NSLayoutConstraint.activate(constraints)
     }
     
-    func setupStockPriceLabel() {
+    private func setupStockPriceLabel() {
+        self.priceLabel.backgroundColor = .systemGreen
+        self.priceLabel.layer.masksToBounds = true
+        self.priceLabel.layer.cornerRadius = 12
         self.priceLabel.textColor = .white
-        self.priceLabel.textAlignment = .right
+        self.priceLabel.textAlignment = .center
         self.priceLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        self.cellView.addSubview(priceLabel)
+        self.cellView.addArrangedSubview(priceLabel)
         
         self.priceLabel.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            priceLabel.heightAnchor.constraint(equalToConstant: 50),
-            priceLabel.widthAnchor.constraint(equalToConstant: 100),
-            priceLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
-            priceLabel.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant: -20)
+            self.priceLabel.heightAnchor.constraint(equalToConstant: 30),
+            self.priceLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 92)
         ]
+        
         NSLayoutConstraint.activate(constraints)
     }
 }

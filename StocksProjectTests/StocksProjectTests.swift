@@ -32,5 +32,29 @@ final class StocksProjectTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
+    func testMemoryLeak_forStocksListViewController() {
+        let sut = StocksListViewController()
+        sut.viewDidLoad()
+        
+        addTeardownBlock { [weak sut] in
+            XCTAssertNil(sut, "Potential memory leak, this object should have been deallocated")
+        }
+    }
+    
+    func testMemoryLeak_forErrorView() {
+        let sut: StocksListViewController = StocksListViewController()
+        let view = sut.errorView
+        
+        // Pressed retry button calls the method from StocksListViewController
+        view.pressedRetryButton()
+        
+        addTeardownBlock { [weak view] in
+            XCTAssertNil(view, "Potential memory leak, this object should have been deallocated")
+        }
+        
+        addTeardownBlock { [weak sut] in
+            XCTAssertNil(sut, "Potential memory leak, this object should have been deallocated")
+        }
+    }
 }

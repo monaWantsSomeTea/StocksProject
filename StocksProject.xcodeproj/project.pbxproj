@@ -20,6 +20,7 @@
 		09D38DD12AC4FD100017FF52 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D38DD02AC4FD100017FF52 /* ErrorView.swift */; };
 		09D38DD52AC647070017FF52 /* StockItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D38DD42AC647070017FF52 /* StockItemCellView.swift */; };
 		09ED78D92AC76F69007BE7FB /* EmptyStocksPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED78D82AC76F69007BE7FB /* EmptyStocksPortfolio.swift */; };
+		09ED78DB2ACCDBDD007BE7FB /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ED78DA2ACCDBDD007BE7FB /* PaddedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		09D38DD02AC4FD100017FF52 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		09D38DD42AC647070017FF52 /* StockItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemCellView.swift; sourceTree = "<group>"; };
 		09ED78D82AC76F69007BE7FB /* EmptyStocksPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStocksPortfolio.swift; sourceTree = "<group>"; };
+		09ED78DA2ACCDBDD007BE7FB /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +109,11 @@
 		09D38D972AC4EC3B0017FF52 /* StocksProject */ = {
 			isa = PBXGroup;
 			children = (
+				09ED78DC2ACCF03E007BE7FB /* ViewControllers */,
 				09D38DCB2AC4EDA60017FF52 /* Views */,
 				09D38DC82AC4ED830017FF52 /* Service */,
 				09D38D982AC4EC3B0017FF52 /* AppDelegate.swift */,
 				09D38D9A2AC4EC3B0017FF52 /* SceneDelegate.swift */,
-				09D38D9C2AC4EC3B0017FF52 /* StocksListViewController.swift */,
 				09D38DA12AC4EC3C0017FF52 /* Assets.xcassets */,
 				09D38DA32AC4EC3C0017FF52 /* LaunchScreen.storyboard */,
 				09D38DA62AC4EC3C0017FF52 /* Info.plist */,
@@ -159,8 +161,17 @@
 				09D38DD02AC4FD100017FF52 /* ErrorView.swift */,
 				09D38DD42AC647070017FF52 /* StockItemCellView.swift */,
 				09ED78D82AC76F69007BE7FB /* EmptyStocksPortfolio.swift */,
+				09ED78DA2ACCDBDD007BE7FB /* PaddedLabel.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		09ED78DC2ACCF03E007BE7FB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				09D38D9C2AC4EC3B0017FF52 /* StocksListViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +310,7 @@
 				09D38DD12AC4FD100017FF52 /* ErrorView.swift in Sources */,
 				09D38D992AC4EC3B0017FF52 /* AppDelegate.swift in Sources */,
 				09D38DCF2AC4F0B40017FF52 /* StocksService.swift in Sources */,
+				09ED78DB2ACCDBDD007BE7FB /* PaddedLabel.swift in Sources */,
 				09D38DCD2AC4EDE30017FF52 /* Stock.swift in Sources */,
 				09D38D9B2AC4EC3B0017FF52 /* SceneDelegate.swift in Sources */,
 			);

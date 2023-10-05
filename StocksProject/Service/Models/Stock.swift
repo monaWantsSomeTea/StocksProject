@@ -7,11 +7,11 @@
 
 import Foundation
 
-public struct Portfolio: Decodable {
+struct Portfolio: Decodable {
     let stocks: [Stock]
 }
 
-public struct Stock: Decodable, Equatable {
+struct Stock: Decodable, Equatable {
     let ticker: String
     let name: String
     let currency: String
@@ -19,7 +19,7 @@ public struct Stock: Decodable, Equatable {
     let quantity: Int?
     let currentPriceTimestamp: Int
     
-    enum StockKeys: String, Swift.CodingKey {
+    private enum StockKeys: String, Swift.CodingKey {
         case ticker = "ticker"
         case name = "name"
         case currency = "currency"
@@ -32,7 +32,7 @@ public struct Stock: Decodable, Equatable {
         case unableToConvertCentsToCurrency
     }
     
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: StockKeys.self)
         
         self.ticker = try container.decode(String.self, forKey: .ticker)

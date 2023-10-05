@@ -23,10 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
-        
-        // Add the initial view controller to the window as the root view controller.
-        let vc = StocksListViewController()
-        window?.rootViewController = vc
+
+        let navigationViewController = UINavigationController(rootViewController: StocksListViewController())
+        window?.rootViewController = navigationViewController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -7,6 +7,8 @@
 
 import UIKit
 
+private let kErrorViewTag: Int = 1
+
 extension StocksListViewController {
     enum StocksLoadStatus: Equatable {
         case loaded(_ stocks: [Stock])
@@ -17,10 +19,11 @@ extension StocksListViewController {
 
 class StocksListViewController: UIViewController {
     private let spinnerView: UIActivityIndicatorView = UIActivityIndicatorView(style: .large)
-    private lazy var errorView: ErrorView = ErrorView(getStocksAction: self.getStocks)
-//    private lazy var emptyStocksView: EmptyStocksPortfolio = EmptyStocksPortfolio()
+    private lazy var emptyStocksView: EmptyStocksPortfolio = EmptyStocksPortfolio()
     private lazy var stocksListView: UITableView = UITableView()
     private var stocks: [Stock] = []
+    
+    lazy var errorView: ErrorView = ErrorView(parent: self)
     
     @MainActor var stocksLoadStatus: StocksLoadStatus = .loading {
         @MainActor didSet {
@@ -29,53 +32,56 @@ class StocksListViewController: UIViewController {
                 self.view.bringSubviewToFront(self.spinnerView)
                 self.spinnerView.startAnimating()
             case .error:
-                // Should setup the error view only once, unless it's removed.
-                self.setupErrorView()
                 self.spinnerView.stopAnimating()
+                
+                // Setup the error view one time.
+                if !self.view.subviews.contains(where: { $0.tag == kErrorViewTag }) {
+                    self.setupErrorView()
+                }
+                
             case .loaded(let stocks):
                 self.stocks = stocks
-                
-//                if stocks.isEmpty {
-//                    self.setupEmptyStocksView()
-//                }
-                
-                // Remove the errorView from the super view,
-                // so we do not have it set up multiple times.
-                self.removeErrorView()
-                self.stocksListView.reloadData()
                 self.spinnerView.stopAnimating()
+                // Remove error view after a successful retry at fetching the stocks
+                self.removeErrorView()
+                
+                if stocks.isEmpty {
+                    self.setupEmptyStocksView()
+                } else {
+                    self.setupStocksListView()
+                }
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.setupSpinnerView()
-        self.setupStocksListView()
         self.getStocks()
         
         self.view.backgroundColor = .white
+        self.navigationItem.title = "Portfolio"
+        self.navigationController?.navigationBar.scrollEdgeAppearance = UINavigationBarAppearance(barAppearance: .init())
     }
 
     func getStocks(completion: (() -> Void)? = nil) {
         self.stocksLoadStatus = .loading
         
-        Task {
+        // Weak `self` to allow the view controller to disallocate.
+        Task { [weak self] in
             do {
                 let stocks = try await StocksService.fetchStocks()
-                self.stocksLoadStatus = .loaded(stocks)
+                self?.stocksLoadStatus = .loaded(stocks)
             } catch {
                 print("Error:", error.localizedDescription)
-                self.stocksLoadStatus = .error
+                self?.stocksLoadStatus = .error
             }
-            
+
             if let completion {
                 completion()
             }
         }
-        
-    
     }
 }
 
@@ -89,8 +95,8 @@ extension StocksListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.stocksListView.dequeueReusableCell(withIdentifier: "stockItemId", for: indexPath) as! StockItemCellView
         cell.backgroundColor = .white
-        cell.ticketLabel.text = self.stocks[indexPath.row].ticker
-        cell.priceLabel.text = self.stocks[indexPath.row].currentPrice // TODO: add another 0 after the decimel if it's 0
+        cell.tickerLabel.text = self.stocks[indexPath.row].ticker
+        cell.priceLabel.text = self.stocks[indexPath.row].currentPrice
         return cell
     }
     
@@ -114,6 +120,7 @@ extension StocksListViewController {
     }
   
     private func setupErrorView() {
+        self.errorView.tag = kErrorViewTag
         self.view.addSubview(self.errorView)
         
         self.errorView.translatesAutoresizingMaskIntoConstraints = false
@@ -127,7 +134,7 @@ extension StocksListViewController {
     }
     
     private func removeErrorView() {
-        if let errorView = self.errorView.viewWithTag(1) {
+        if let errorView = self.errorView.viewWithTag(kErrorViewTag) {
             errorView.removeFromSuperview()
         }
     }
@@ -148,14 +155,16 @@ extension StocksListViewController {
         NSLayoutConstraint.activate(constraints)
     }
     
-//    private func setupEmptyStocksView() {
-//        self.emptyStocksView.layer.borderWidth = 4
-//        self.emptyStocksView.layer.borderColor = .init(red: 200/255, green: 2/255, blue: 12/255, alpha: 1)
-//        self.stocksContentView.addArrangedSubview(self.emptyStocksView)
-//
-//        self.stocksContentView.translatesAutoresizingMaskIntoConstraints = false
-//        let contraints = [
-//        ]
-//        NSLayoutConstraint.activate(contraints)
-//    }
+    private func setupEmptyStocksView() {
+        self.view.addSubview(self.emptyStocksView)
+
+        self.emptyStocksView.translatesAutoresizingMaskIntoConstraints = false
+        let contraints = [
+            self.emptyStocksView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.emptyStocksView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.emptyStocksView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.emptyStocksView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        ]
+        NSLayoutConstraint.activate(contraints)
+    }
 }
