@@ -106,8 +106,8 @@ extension StocksListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let cell = tableView.cellForRow(at: indexPath) as! StockItemCellView
-        let vc = StockDetailViewController(property: cell.tickerLabel.text)
+        let stock = self.stocks[indexPath.row]
+        let vc = StockDetailViewController(stock: stock)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
